@@ -9,16 +9,6 @@ Date: 10/06/18
 
 ****************************************************/
 
-void div_ceil_acc(float *rank, float *return_total){
-	
-	*rank = (*rank/10.0);  
-
-	*rank = ceil(*rank);	// Rounds up for fractional results. 
-
-	*return_total += (*rank);
-
-}
-
 //Function to check the math on question #1.
 int num1(float baselevel){
 	
@@ -30,34 +20,29 @@ int num1(float baselevel){
 	total = baselevel;						//Input given at the terminal initiates the total.
 
 	printf("total of base-level soldiers = %f\n", total);
-
-	div_ceil_acc(&leaders_of_ten, &total);
 	
-	/* leaders_of_ten = (baselevel/10.0);  
+	leaders_of_ten = (baselevel/10.0);  
 
 	leaders_of_ten = ceil(leaders_of_ten);	// Rounds up for fractional results. 
 
-	total += (leaders_of_ten); */
+	total += (leaders_of_ten);
 
 	printf("total including \"leaders of ten\"= %f\n", total);
 
-	div_ceil_acc(&leaders_of_one_hundered, &total);
-		
-	/* leaders_of_one_hundered = (leaders_of_ten / 10);
+	
+	leaders_of_one_hundered = (leaders_of_ten / 10);
 
 	leaders_of_one_hundered = ceil(leaders_of_one_hundered);
 
-	total += (leaders_of_one_hundered); */
+	total += (leaders_of_one_hundered); 
 
 	printf("total including \"leaders of one-hundered\"= %f\n", total);
 
-	div_ceil_acc(&leaders_of_one_thousand, &total);
-	
-	/* leaders_of_one_thousand = (leaders_of_one_hundered / 10);
+	leaders_of_one_thousand = (leaders_of_one_hundered / 10);
 
 	leaders_of_one_thousand = ceil(leaders_of_one_thousand);
 
-	total += (leaders_of_one_thousand); */
+	total += (leaders_of_one_thousand);
 
 	printf("total including \"leaders of one-thousand\"= %f\n", total);
 
